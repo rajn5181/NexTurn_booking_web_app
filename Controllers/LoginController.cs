@@ -1,7 +1,12 @@
-﻿namespace TravelBookingWebApp.Controllers
+﻿
+using Microsoft.AspNetCore.Mvc;
+namespace TravelBookingWebApp.Controllers
 {
-    public class LoginController
+    public class LoginController : Controller
     {
-
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }

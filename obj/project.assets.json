@@ -2195,19 +2195,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rajn5\\.nuget\\packages\\": {}
+    "C:\\Users\\vrgau\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\NexTurn Project\\TravelBookingWebApp\\TravelBookingWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
       "projectName": "TravelBookingWebApp",
-      "projectPath": "E:\\NexTurn Project\\TravelBookingWebApp\\TravelBookingWebApp.csproj",
-      "packagesPath": "C:\\Users\\rajn5\\.nuget\\packages\\",
-      "outputPath": "E:\\NexTurn Project\\TravelBookingWebApp\\obj\\",
+      "projectPath": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
+      "packagesPath": "C:\\Users\\vrgau\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rajn5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vrgau\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2265,6 +2265,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.18, 6.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.18, 6.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.18, 6.0.18]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.18, 6.0.18]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2273,7 +2291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
       }
     }
   }
