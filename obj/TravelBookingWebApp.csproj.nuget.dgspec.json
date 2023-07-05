@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj": {}
+    "C:\\Users\\vrgau\\source\\repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj": {
+    "C:\\Users\\vrgau\\source\\repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\vrgau\\source\\repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
         "projectName": "TravelBookingWebApp",
-        "projectPath": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
+        "projectPath": "C:\\Users\\vrgau\\source\\repos\\NexTurn_booking_web_app\\TravelBookingWebApp.csproj",
         "packagesPath": "C:\\Users\\vrgau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vrgau\\Source\\Repos\\NexTurn_booking_web_app\\obj\\",
+        "outputPath": "C:\\Users\\vrgau\\source\\repos\\NexTurn_booking_web_app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vrgau\\AppData\\Roaming\\NuGet\\NuGet.Config",
