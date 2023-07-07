@@ -1,56 +1,223 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<!-- Booking Start -->
-<div class="container-fluid booking mt-5 pb-5">
-    <div class="container-fluid pb-5">
-        <div class="bg-light shadow" style="padding: 30px;">
-            <div class="row align-items-center" style="min-height: 60px;">
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Destination</option>
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 1</option>
-                                    <option value="3">Destination 1</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Duration</option>
-                                    <option value="1">Duration 1</option>
-                                    <option value="2">Duration 1</option>
-                                    <option value="3">Duration 1</option>
-                                </select>
-                            </div>
+﻿@model TravelBookingWebApp.Models.TrainBookingModel
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1>Make your reservation</h1>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form">
+                            <form id="bookingForm">
+                                <div class="form-group">
+                                    <label id="fromInput">From</label>
+                                    @Html.DropDownListFor(m => m.Source, Model.From, new { @class = "form-control bg-white w-p100", @name="From" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label id="fromInput">To</label>
+                                    @Html.DropDownListFor(m => m.Destination, Model.To, new { @class = "form-control bg-white w-p100" ,@name="To" })
+                                </div>
+                            
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <span class="form-label">Journey Date</span>
+                                            <input class="form-control" type="date" id="dateInput" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-btn">
+                                    <button type="button" id="submitBtn" class="submit-btn">Check availability</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Booking End -->
+</body>
+<style>
+    .section {
+        position: relative;
+        height: 100vh;
+    }
+
+        .section .section-center {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+    #booking {
+        font-family: 'Montserrat', sans-serif;
+        background-image: url('https://i.imgur.com/ZaRYfYW.jpg');
+        background-size: cover;
+        background-position: center;
+        margin-top: 15px;
+    }
+
+        #booking::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: rgba(47, 103, 177, 0.6);
+        }
+
+    .booking-form {
+        background-color: #fff;
+        padding: 50px 20px;
+        -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+
+        .booking-form .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .booking-form .form-control {
+            background-color: #ebecee;
+            border-radius: 4px;
+            border: none;
+            height: 40px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            color: #3e485c;
+            font-size: 14px;
+        }
+
+            .booking-form .form-control::-webkit-input-placeholder {
+                color: rgba(62, 72, 92, 0.3);
+            }
+
+            .booking-form .form-control:-ms-input-placeholder {
+                color: rgba(62, 72, 92, 0.3);
+            }
+
+            .booking-form .form-control::placeholder {
+                color: rgba(62, 72, 92, 0.3);
+            }
+
+        .booking-form input[type="date"].form-control:invalid {
+            color: rgba(62, 72, 92, 0.3);
+        }
+
+        .booking-form select.form-control {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+            .booking-form select.form-control + .select-arrow {
+                position: absolute;
+                right: 0px;
+                bottom: 4px;
+                width: 32px;
+                line-height: 32px;
+                height: 32px;
+                text-align: center;
+                pointer-events: none;
+                color: rgba(62, 72, 92, 0.3);
+                font-size: 14px;
+            }
+
+                .booking-form select.form-control + .select-arrow:after {
+                    content: '\279C';
+                    display: block;
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                }
+
+        .booking-form .form-label {
+            display: inline-block;
+            color: #3e485c;
+            font-weight: 700;
+            margin-bottom: 6px;
+            margin-left: 7px;
+        }
+
+        .booking-form .submit-btn {
+            display: inline-block;
+            color: #fff;
+            background-color: #1e62d8;
+            font-weight: 700;
+            padding: 14px 30px;
+            border-radius: 4px;
+            border: none;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all;
+        }
+
+            .booking-form .submit-btn:hover,
+            .booking-form .submit-btn:focus {
+                opacity: 0.9;
+            }
+
+    .booking-cta {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+
+        .booking-cta h1 {
+            font-size: 52px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .booking-cta p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#submitBtn").click(function () {
+            debugger;
+            var source = $("select[name='Source']").val();
+            var destination = $("select[name='Destination']").val();
+
+            var date = $("#dateInput").val();
+
+            var data = {
+                Source: source,
+                Destination: destination,
+                TravelDate: date
+            };
+
+            $.ajax({
+                url: "/TrainBooking/TicketBook",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    // Handle the success response
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    // Handle the error
+                }
+            });
+        });
+    });
+</script>
+
+
+

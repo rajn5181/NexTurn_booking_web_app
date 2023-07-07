@@ -6,4 +6,8 @@
     <View_SelectedScaffolderID>RazorViewEmptyScaffolder</View_SelectedScaffolderID>
     <View_SelectedScaffolderCategoryPath>root/Common/MVC/View</View_SelectedScaffolderCategoryPath>
   </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+	</ItemGroup>
+
 </Project>

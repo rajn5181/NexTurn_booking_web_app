@@ -77,3 +77,6 @@ E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\runtimes\win\lib\netstan
 E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\NexTurn Project\TravelBookingWebApp\obj\Debug\net6.0\TravelBookingWebApp.csproj.CopyComplete
+E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\NexTurn Project\TravelBookingWebApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

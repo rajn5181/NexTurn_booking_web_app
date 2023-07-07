@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web; 
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace TravelBookingWebApp.Common
 {
@@ -17,11 +18,19 @@ namespace TravelBookingWebApp.Common
             con = new SqlConnection(returnConnectionString());
         }
 
-        public string returnConnectionString()
-        {
-            return System.Configuration.ConfigurationManager.ConnectionStrings["DBCS"].ToString();
-        }
-        public SqlConnection returnConnection()
+      
+
+    public string returnConnectionString()
+    {
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+        return configuration.GetConnectionString("DBCS");
+    }
+
+    public SqlConnection returnConnection()
         {
             return con;
         }

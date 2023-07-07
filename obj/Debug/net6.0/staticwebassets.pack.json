@@ -249,6 +249,10 @@
       "PackagePath": "staticwebassets\\mail\\jqBootstrapValidation.min.js"
     },
     {
+      "Id": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\scss\\TicketBooking.scss",
+      "PackagePath": "staticwebassets\\scss\\TicketBooking.scss"
+    },
+    {
       "Id": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YuwtrB7joes3bTr2z1cGJOVWRkXb6u6iP+WnU6VpxJk=",
+  "Hash": "gCSfS3PC2bOUk1vKLa9Du/fxb//kWuVOljos0PcsO8A=",
   "Source": "TravelBookingWebApp",
   "BasePath": "_content/TravelBookingWebApp",
   "Mode": "Default",
@@ -2633,6 +2633,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\style.scss"
+    },
+    {
+      "Identity": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\scss\\TicketBooking.scss",
+      "SourceId": "TravelBookingWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\",
+      "BasePath": "_content/TravelBookingWebApp",
+      "RelativePath": "scss/TicketBooking.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\TicketBooking.scss"
     }
   ]
 }

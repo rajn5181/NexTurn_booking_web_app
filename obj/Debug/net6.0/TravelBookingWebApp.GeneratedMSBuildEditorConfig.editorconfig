@@ -72,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5Cb29raW5nXFRpY2tldEJvb2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/NexTurn Project/TravelBookingWebApp/Views/TrainBooking/Trainlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5Cb29raW5nXFRyYWlubGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/NexTurn Project/TravelBookingWebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -17,6 +17,7 @@
     <None Include="Views\services\service.cshtml" />
     <None Include="Views\single\single.cshtml" />
     <None Include="Views\testimonal\testimonial.cshtml" />
+    <None Include="wwwroot\scss\TicketBooking.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+	 <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\scss\" />
   </ItemGroup>
 
 </Project>
