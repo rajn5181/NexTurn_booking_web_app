@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\img\\blog-3.jpg"
     },
     {
+      "Id": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\img\\bullettrain.jpg",
+      "PackagePath": "staticwebassets\\img\\bullettrain.jpg"
+    },
+    {
       "Id": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\img\\bus.jpg",
       "PackagePath": "staticwebassets\\img\\bus.jpg"
     },

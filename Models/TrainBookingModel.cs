@@ -17,8 +17,8 @@ namespace TravelBookingWebApp.Models
         public int SEQ { get; set; }
         public string? SCode { get; set; }
         public string ?SName { get; set; }
-        public TimeZone? Atime { get; set; }
-        public TimeZone ?DTime { get; set; }
+        public string Atime { get; set; }
+        public string DTime { get; set; }
         public int Distance { get; set; }
         public string SSName { get; set; }
         public List<SelectListItem> SStation { get; set; }

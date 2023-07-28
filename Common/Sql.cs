@@ -85,7 +85,37 @@ namespace TravelBookingWebApp.Common
             }
             return ReturnValue;
         }
+        public void ExecuteStoredToSave(string StoredProcedureName, List<SqlParameter> sqlParameters)
+        {
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(StoredProcedureName, con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 6000;
 
+                    if (sqlParameters != null && sqlParameters.Count > 0)
+                    {
+                        foreach (SqlParameter parameter in sqlParameters)
+                        {
+                            cmd.Parameters.Add(parameter);
+                        }
+                    }
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+              
+                throw; 
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public DataSet returnSqlDataSet(string StoredProcedureName, List<SqlParameter> sqlParameter = null)
         {
             try

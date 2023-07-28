@@ -34,10 +34,16 @@ namespace TravelBookingWebApp.Common
                             objBT.TNo = Convert.IsDBNull(item["TNo"]) ? default(int) : Convert.ToInt32(item["TNo"]);
                             objBT.SEQ = Convert.IsDBNull(item["SEQ"]) ? default(int) : Convert.ToInt32(item["SEQ"]);
                             objBT.TName = Convert.IsDBNull(item["TName"]) ? default(string) : Convert.ToString(item["TName"]);
+                            objBT.Atime = Convert.IsDBNull(item["Atime"]) ? default(string) : Convert.ToString(item["Atime"]);
+                            objBT.DTime = Convert.IsDBNull(item["DTime"]) ? default(string) : Convert.ToString(item["DTime"]);
                             objBT.SCode = Convert.IsDBNull(item["SCode"]) ? default(string) : Convert.ToString(item["SCode"]);
                             objBT.SName = Convert.IsDBNull(item["SName"]) ? default(string) : Convert.ToString(item["SName"]);
                             objBT.Distance = Convert.IsDBNull(item["Distance"]) ? default(int) : Convert.ToInt32(item["Distance"]);
                             objBT.DestStName = Convert.IsDBNull(item["DestStName"]) ? default(string) : Convert.ToString(item["DestStName"]);
+                            objBT.SSName = Convert.IsDBNull(item["SSName"]) ? default(string) : Convert.ToString(item["SSName"]);
+                           
+
+
                             TLM.Add(objBT);
                         }
                     }

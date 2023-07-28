@@ -1,0 +1,249 @@
+﻿@model TravelBookingWebApp.Models.TrainBookingModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Booking Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin-bottom: 10px;
+            padding-top: 100px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 4px;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #0069d9;
+            }
+    </style>
+</head>
+
+<body onload="autofillTrainNo('@Model.TNo','@Model.TName','@Model.Distance','@Model.SSName','@Model.DestStName')">
+    <div class="container mt-5">
+        <h2>Train Booking Form</h2>
+        <form method="post" asp-action="Booklist" asp-controller="BookStatus" onsubmit="return validateForm()" id="bookingForm">
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="trainNo">Train No:</label>
+                    <input type="text" class="form-control" id="trainNo" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label for="trainName">Train Name:</label>
+                    <input type="text" class="form-control" id="trainName" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label for="distance">Distance:</label>
+                    <input type="text" class="form-control" id="distance" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label for="source">Source:</label>
+                    <input type="text" class="form-control" id="source" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label for="destination">Destination:</label>
+                    <input type="text" class="form-control" id="destination" readonly>
+                </div>
+                <div class="col-sm-6">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" placeholder="Enter Age">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="passengers">Number of Passengers:</label>
+                <input type="number" class="form-control" id="passengers" placeholder="Enter Number of Passengers">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        function autofillTrainNo(trainNo, trainName, distance, source, destination) {
+            $("#trainNo").val(trainNo);
+            $("#trainName").val(trainName);
+            $("#distance").val(distance);
+            $("#source").val(source);
+            $("#destination").val(destination);
+        }
+
+       function validateForm() {
+        var name = $("#name").val().trim();
+        var email = $("#email").val().trim();
+        var age = $('#age').val().trim();
+        var passengers = $('#passengers').val().trim();
+        var phone = $('#phone').val().trim();
+
+        // Check if the Name field is empty
+        if (name === "") {
+            showErrorAlert("Name is required");
+            return false;
+        }
+
+        // Check if the Email field is empty
+        if (email === "") {
+            showErrorAlert("Email is required");
+            return false;
+        }
+
+        // Check if the Email is in a valid format using regex
+        var emailRegex = /^[\w.-]+@@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            showErrorAlert("Invalid email format");
+            return false;
+        }
+
+        // Check if the Age field is empty
+        if (age === "") {
+            showErrorAlert("Age is required");
+            return false;
+        }
+
+        // Check if the Age is a positive number
+        if (isNaN(age) || parseFloat(age) <= 0) {
+            showErrorAlert("Age must be a valid positive number");
+            return false;
+        }
+
+        // Check if the Phone field is empty
+        if (phone === "") {
+            showErrorAlert("Phone number is required");
+            return false;
+        }
+
+        // Check if the Phone number is in a valid format using regex
+        var phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(phone)) {
+            showErrorAlert("Invalid phone number format");
+            return false;
+        }
+
+        // Check if the Passengers field is empty
+        if (passengers === "") {
+            showErrorAlert("Number of passengers is required");
+            return false;
+        }
+
+        // Check if the Passengers is a positive integer
+        if (!Number.isInteger(parseFloat(passengers)) || parseInt(passengers) <= 0) {
+            showErrorAlert("Number of passengers must be a valid positive integer");
+            return false;
+        }
+
+        return true;
+    }
+        function showSuccess(message) {
+            swal({
+                icon: 'success',
+                title: 'Success!',
+                text: message,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+            });
+        }
+
+    function showErrorAlert(message) {
+        swal({
+            title: "Error",
+            text: message,
+            icon: "error",
+        });
+    }
+       
+
+        // Function to handle form submission
+        $("#bookingForm").submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+
+            if (validateForm()) {
+                var formData = new FormData(); // Create a FormData object to store form data
+                formData.append("trainNo", $("#trainNo").val());
+                formData.append("trainName", $("#trainName").val());
+                formData.append("distance", $("#distance").val());
+                formData.append("source", $("#source").val());
+                formData.append("destination", $("#destination").val());
+                formData.append("name", $("#name").val());
+                formData.append("email", $("#email").val());
+                formData.append("phone", $("#phone").val());
+                formData.append("age", $("#age").val());
+                formData.append("passengers", $("#passengers").val());
+
+
+                
+                $.ajax({
+                    url: "/BookStatus/Booklist",
+                    type: "POST",
+                    data: formData,
+                    processData: false, // Important! To prevent jQuery from processing the data
+                    contentType: false, // Important! To prevent jQuery from setting the content type
+                    success: function (response) {
+                        showSuccess("Booking Successfully!");
+                        //window.location.href = "/TrainBooking/TicketBook";
+                        
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle errors (if any)
+                        console.error(error);
+                        // Optionally, you can display an error message here.
+                    }
+                });
+                
+            }
+         
+           
+        });
+    </script>
+</body>
+</html>
+

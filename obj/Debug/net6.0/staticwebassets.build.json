@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gCSfS3PC2bOUk1vKLa9Du/fxb//kWuVOljos0PcsO8A=",
+  "Hash": "Av2navd/LrKtCFDroQIjs/NzfvHkcdjjyH8lc7UCE0k=",
   "Source": "TravelBookingWebApp",
   "BasePath": "_content/TravelBookingWebApp",
   "Mode": "Default",
@@ -236,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\blog-3.jpg"
+    },
+    {
+      "Identity": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\img\\bullettrain.jpg",
+      "SourceId": "TravelBookingWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\",
+      "BasePath": "_content/TravelBookingWebApp",
+      "RelativePath": "img/bullettrain.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bullettrain.jpg"
     },
     {
       "Identity": "E:\\NexTurn Project\\TravelBookingWebApp\\wwwroot\\img\\bus.jpg",
